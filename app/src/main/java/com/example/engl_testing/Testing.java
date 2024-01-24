@@ -67,7 +67,7 @@ public class Testing extends Activity{
     DatabaseReference dr = FirebaseDatabase.getInstance().getReference("Data");
 
     public static void test() {
-        moveList.add("mov/Пересылка данных");
+        moveList.add("mov/Пересылка_данных");
         recyclerAdapter.notifyDataSetChanged();
     }
 
