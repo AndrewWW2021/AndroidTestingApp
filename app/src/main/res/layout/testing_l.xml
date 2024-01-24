@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/Zast"
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Zast"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="30sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="146dp"
+        android:layout_height="363dp"
+        android:layout_below="@+id/tv"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/b_inbox"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/tv"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/b_outbox"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/b_inbox"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/b_jump"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/b_outbox"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/from_to"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/b_jump"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_from"
+        android:layout_width="80dp"
+        android:layout_height="363dp"
+        android:layout_below="@+id/from_to"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="10dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_to"
+        android:layout_width="80dp"
+        android:layout_height="363dp"
+        android:layout_below="@+id/from_to"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="10dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        />
+
+    <ImageView
+        android:id="@+id/b_task"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rv"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/b_play"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rv"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp" />
+    <!--
+    <ImageButton
+        android:id="@+id/imageButton_inbox"
+        android:layout_width="95dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/Lev_check"
+        android:layout_marginLeft="250dp"
+        app:srcCompact="@drawable/inbox" />
+
+
+    <com.example.engl_testing.SampleView
+        android:id="@+id/Graph"
+        android:layout_width="59dp"
+        android:layout_height="456dp"
+        android:layout_below="@+id/tv"
+        android:layout_marginTop="16dp"
+        tools:ignore="MissingClass" />
+
+        -->
+
+
+</RelativeLayout>

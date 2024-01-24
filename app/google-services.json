@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781217326108",
+    "project_id": "codetesting-ulstu",
+    "storage_bucket": "codetesting-ulstu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781217326108:android:721cb60c88100037e62bd9",
+        "android_client_info": {
+          "package_name": "com.example.engl_testing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaOMEoAMf88xEYYgRuEz2ZDxJVttqwcQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

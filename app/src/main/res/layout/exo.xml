@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/exoPlayerView"
+        android:layout_width="300dp"
+        android:layout_height="match_parent" />
+
+
+
+    <Button
+        android:id="@+id/vid1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exoPlayerViewSound"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="300dp"
+        android:text="Vid 1" />
+
+    <Button
+        android:id="@+id/vid2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vid1"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="300dp"
+        android:text="Vid 2" />
+
+    <Button
+        android:id="@+id/vid3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vid2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="300dp"
+        android:text="Vid 3" />
+
+    <Button
+        android:id="@+id/pl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vid3"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="300dp"
+        android:text="pl" />
+
+    <Button
+        android:id="@+id/off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pl"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="10dp"
+        android:text="off" />
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/exoPlayerViewSound"
+        android:layout_marginLeft="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+
+</RelativeLayout>

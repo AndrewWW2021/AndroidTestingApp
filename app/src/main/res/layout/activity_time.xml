@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/Zast"
+        android:layout_width="match_parent"
+        android:layout_height="91dp" />
+
+    <TextView
+        android:id="@+id/Task"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/Zast"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="Проверка на время" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Task"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/words"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_below="@+id/tv"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/transl"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_below="@+id/words"
+
+        android:layout_marginTop="10dp"
+
+        android:gravity="top|start"
+        android:hint="Input Code"
+
+        android:inputType="textMultiLine"
+
+        android:lines="10"></EditText>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/transl"
+        android:text="Next" />
+
+
+</RelativeLayout>

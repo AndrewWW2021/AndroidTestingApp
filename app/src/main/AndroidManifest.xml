@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.engl_testing">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@drawable/et1"
+        android:label="Code Testing"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Engl_testing">
+        <activity
+            android:name=".ExoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TimeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Level_1"
+            android:exported="true" />
+        <activity
+            android:name=".Level_2"
+            android:exported="true" />
+        <activity
+            android:name=".Testing"
+            android:exported="true" />
+        <activity
+            android:name=".SetTimingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
