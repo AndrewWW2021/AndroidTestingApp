@@ -91,7 +91,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public boolean onLongClick(View view) {
             //
             String ww = moveList.get(getAdapterPosition());
+            int i = moveList.indexOf(getAdapterPosition()); // String.valueOf(i)
             Toast.makeText(view.getContext(), ww,Toast.LENGTH_LONG).show();
+            //moveList.set(1,"t");
+            //Testing.test2();
             return true;
         }
     }

@@ -58,7 +58,7 @@ public class Testing extends Activity{
     //
     RecyclerView recyclerViewFrom;
     RecyclerView recyclerViewTo;
-    RecyclerAdapter recyclerAdapterElem;
+    RecyclerAdapterElem recyclerAdapterElem;
     ArrayList moveListFrom;
     ArrayList moveListTo;
 
@@ -67,7 +67,13 @@ public class Testing extends Activity{
     DatabaseReference dr = FirebaseDatabase.getInstance().getReference("Data");
 
     public static void test() {
-        moveList.add("mov/Пересылка_данных");
+        moveList.add("MOV/Пересылка данных");
+        recyclerAdapter.notifyDataSetChanged();
+    }
+
+    public static void test2() {
+        moveList.remove(1);
+        moveList.add(1, "New/Пересылка данных");
         recyclerAdapter.notifyDataSetChanged();
     }
 
@@ -81,18 +87,9 @@ public class Testing extends Activity{
         drawable = getResources().getDrawable(R.drawable.z2);
         Zast.setImageDrawable(drawable);
 
-        this.From_to = findViewById(R.id.from_to);
-        drawable = getResources().getDrawable(R.drawable.fromto);
-        From_to.setImageDrawable(drawable);
+
         //картинки-кнопки
-        this.b_inbox = findViewById(R.id.b_inbox);
-        b_inbox.setImageDrawable(getResources().getDrawable(R.drawable.inbox));
 
-        this.b_outbox = findViewById(R.id.b_outbox);
-        b_outbox.setImageDrawable(getResources().getDrawable(R.drawable.outbox));
-
-        this.b_jump = findViewById(R.id.b_jump);
-        b_jump.setImageDrawable(getResources().getDrawable(R.drawable.jump));
 
         this.b_task = findViewById(R.id.b_task);
         b_task.setImageDrawable(getResources().getDrawable(R.drawable.task));
@@ -109,14 +106,15 @@ public class Testing extends Activity{
         recyclerAdapter = new RecyclerAdapter(moveList);
         recyclerView.setAdapter(recyclerAdapter);
         // from/to list's
-        moveListTo =new ArrayList<>();
-        recyclerViewTo = findViewById(R.id.rv_to);
-        recyclerAdapterElem = new RecyclerAdapter(moveListTo);
-        recyclerViewTo.setAdapter(recyclerAdapterElem);
+
+//        moveListTo =new ArrayList<>();
+//        recyclerViewTo = findViewById(R.id.rv_to);
+//        recyclerAdapterElem = new RecyclerAdapter(moveListTo);
+//        recyclerViewTo.setAdapter(recyclerAdapterElem);
 
         moveListFrom =new ArrayList<>();
         recyclerViewFrom = findViewById(R.id.rv_from);
-        recyclerAdapterElem = new RecyclerAdapter(moveListFrom);
+        recyclerAdapterElem = new RecyclerAdapterElem(moveListFrom);
         recyclerViewFrom.setAdapter(recyclerAdapterElem);
 
 
@@ -124,15 +122,11 @@ public class Testing extends Activity{
         moveList.add("InBox/ввод");
         moveList.add("OutBox/вывод");
 
-        moveListFrom.add("A/-");
-        moveListFrom.add("B/-");
-        moveListFrom.add("C/-");
-        moveListFrom.add("D/-");
         moveListFrom.add("R_mov/m");
-        moveListFrom.add("A/-");
-        moveListFrom.add("B/-");
-        moveListFrom.add("C/-");
-        moveListFrom.add("D/-");
+        moveListFrom.add("MOV/-");
+        moveListFrom.add("AX/-");
+        moveListFrom.add("BX/-");
+
 
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
@@ -147,46 +141,47 @@ public class Testing extends Activity{
         //this.test();
 
         //кнопки-команды
-        b_inbox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                moveList.add("InBox/ввод");
-                recyclerAdapter.notifyDataSetChanged();
 
-                Random r = new Random();
-                int i1 = r.nextInt(100 - 1) + 1;
-                DatabaseReference ref = db.getReference("points" + i1); // Key
-                ref.setValue(1); // Value
-
-                DatabaseReference ref1 = db.getReference("time" + i1); // Key
-                ref1.setValue(5); // Value
-
-            }
-        });
-        b_outbox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                moveList.add("OutBox/вывод");
-                recyclerAdapter.notifyDataSetChanged();
-
-                //DatabaseReference ref_p = db.getReference();
-
-                //Datab
-                //ref_p.getRoot();
-                //ref_p.get();
-                getdata();
-
-                //Toast.makeText(getBaseContext(), "1",Toast.LENGTH_LONG).show();
-            }
-        });
-        b_jump.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                moveList.add("Jump from/переход c");
-                moveList.add("Jump to/переход на");
-                recyclerAdapter.notifyDataSetChanged();
-            }
-        });
+//        b_inbox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                moveList.add("InBox/ввод");
+//                recyclerAdapter.notifyDataSetChanged();
+//
+//                Random r = new Random();
+//                int i1 = r.nextInt(100 - 1) + 1;
+//                DatabaseReference ref = db.getReference("points" + i1); // Key
+//                ref.setValue(1); // Value
+//
+//                DatabaseReference ref1 = db.getReference("time" + i1); // Key
+//                ref1.setValue(5); // Value
+//
+//            }
+//        });
+//        b_outbox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                moveList.add("OutBox/вывод");
+//                recyclerAdapter.notifyDataSetChanged();
+//
+//                //DatabaseReference ref_p = db.getReference();
+//
+//                //Datab
+//                //ref_p.getRoot();
+//                //ref_p.get();
+//                getdata();
+//
+//                //Toast.makeText(getBaseContext(), "1",Toast.LENGTH_LONG).show();
+//            }
+//        });
+//        b_jump.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                moveList.add("Jump from/переход c");
+//                moveList.add("Jump to/переход на");
+//                recyclerAdapter.notifyDataSetChanged();
+//            }
+//        });
         // задание
         b_task.setOnClickListener(new View.OnClickListener() {
             @Override
