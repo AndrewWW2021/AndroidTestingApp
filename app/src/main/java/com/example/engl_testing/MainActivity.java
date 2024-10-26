@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
     public static String passStr = "";
     public static String nameStr = "";
 
-    // Идентификатор уведомления
+    // Идентификатор уведомления .
     private static final int NOTIFY_ID = 101;
 
     // Идентификатор канала
