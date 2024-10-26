@@ -8,8 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+//import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.List;
 
@@ -71,19 +73,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public void onClick(View view) {
             String w = moveList.get(getAdapterPosition());
             //Toast.makeText(view.getContext(), w,Toast.LENGTH_LONG).show();
-            if(w.contains("InBox")){
-                Toast.makeText(view.getContext(), "Команда InBox берет один верхний элемент из ВВОДА",Toast.LENGTH_LONG).show();
-            }
-            if(w.contains("OutBox")){
-                Toast.makeText(view.getContext(), "Команда OutBox отправляет взятый элемент на ВЫВОД",Toast.LENGTH_LONG).show();
-            }
-            if(w.contains("R_mov")){
-                Toast.makeText(view.getContext(), "Команда mov",Toast.LENGTH_LONG).show();
-                //moveList.add("mov");
-                //test();
-                Testing.test();
-
-            }
+//            if(w.contains("InBox")){
+//                Toast.makeText(view.getContext(), "Команда InBox берет один верхний элемент из ВВОДА",Toast.LENGTH_LONG).show();
+//            }
+//            if(w.contains("OutBox")){
+//                Toast.makeText(view.getContext(), "Команда OutBox отправляет взятый элемент на ВЫВОД",Toast.LENGTH_LONG).show();
+//            }
+//            if(w.contains("R_mov")){
+//                Toast.makeText(view.getContext(), "Команда mov",Toast.LENGTH_LONG).show();
+//                //moveList.add("mov");
+//                //test();
+//                Testing.test();
+//
+//            }
+            int i = getAdapterPosition();
+            Toast.makeText(view.getContext(), "Ввод в строку №" + String.valueOf(i),Toast.LENGTH_LONG).show();
+            Testing.test2(i);
 
         }
 
@@ -92,7 +97,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             //
             String ww = moveList.get(getAdapterPosition());
             int i = moveList.indexOf(getAdapterPosition()); // String.valueOf(i)
-            Toast.makeText(view.getContext(), ww,Toast.LENGTH_LONG).show();
+            //Toast.makeText(view.getContext(), ww,Toast.LENGTH_LONG).show();
             //moveList.set(1,"t");
             //Testing.test2();
             return true;

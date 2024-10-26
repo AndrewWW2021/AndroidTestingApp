@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@drawable/et1"
@@ -11,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Engl_testing">
+
         <activity
             android:name=".ExoActivity"
             android:exported="true" />
@@ -28,6 +32,9 @@
             android:exported="true" />
         <activity
             android:name=".SetTimingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Admin"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

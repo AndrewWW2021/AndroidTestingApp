@@ -47,15 +47,15 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
             android:layout_marginTop="40dp"
-            android:text="Video" />
+            android:text="Инструкция(ReadMe)" />
 
 
         <Button
             android:id="@+id/menu2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/menu1"
-            android:layout_marginTop="60dp"
+            android:layout_below="@+id/menu4"
+            android:layout_marginTop="600dp"
             android:text="Level1" />
 
         <Button
@@ -70,7 +70,7 @@
             android:id="@+id/menu4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/menu3"
+            android:layout_below="@+id/menu1"
             android:layout_marginTop="60dp"
             android:text="Testing" />
 

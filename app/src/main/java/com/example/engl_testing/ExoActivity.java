@@ -8,15 +8,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+//import androidx.annotation.Nullable;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.ui.StyledPlayerView;
+//import
 
 public class ExoActivity extends Activity {
 
     ExoPlayer player;
+    //ExoPlayer playerS;
     String video1 = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
     String video2 = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/DesigningForGoogleCast.mp4";
     String video3 = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -30,6 +35,8 @@ public class ExoActivity extends Activity {
     String PLstr;
 
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +47,8 @@ public class ExoActivity extends Activity {
         this.Video3 = findViewById(R.id.vid3);
         this.PlayL = findViewById(R.id.pl);
         this.PL_clear = findViewById(R.id.off);
+
+
 
 
         StyledPlayerView playerView = findViewById(R.id.exoPlayerView);
@@ -64,57 +73,94 @@ public class ExoActivity extends Activity {
 
         PLstr = "";
 
-//        MediaItem inputMediaItem =
-//                new MediaItem.Builder()
-//                        .setUri(video)
-//                        .setClippingConfiguration(
-//                                new MediaItem.ClippingConfiguration.Builder()
-//                                        .setStartPositionMs(0_000)
-//                                        .setEndPositionMs(25_000)
-//                                        .build())
-//                        .build();
-//
-        //
-
-        //player.setMediaItem(inputMediaItem);
         playerS.setRepeatMode(playerS.REPEAT_MODE_OFF);
 
-        // первая кнопка
+        playerS.addListener(new Player.Listener() {
+            @Override
+            public void onPlaybackStateChanged(int playbackState) {
+                if (playbackState == playerS.STATE_ENDED){
+                    //Toast.makeText(getBaseContext(),"звуки все",Toast.LENGTH_LONG).show();
+                    playerS.clearMediaItems();
+
+                    playerS.seekTo(0); // !!!!!!!!
+                    playerS.setPlayWhenReady(true);
+                    //playerS.setPlayWhenReady(true);
+                    //playerS.getPlayWhenReady();
+                    //playbackState = playerS.STATE_READY;
+
+                }
+            }
+
+        });
+//        playerS.addListener(new Player.Listener() {
+//            @Override
+//            public void onIsPlayingChanged(boolean isPlaying) {
+//                if (!isPlaying) {
+//                    playerS.isPlaying();
+//                    Toast.makeText(getBaseContext(),"not playing",Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
+
+
+        // first button
         Video1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.addMediaItem(firstItem);
-                Toast.makeText(getBaseContext(),"1 видео добавлено в плейлист",Toast.LENGTH_LONG).show();
+
+                player.addMediaItem(firstItem); // add video in playList
+                //Toast.makeText(getBaseContext(),"1 video added to playlist",Toast.LENGTH_LONG).show();
+                player.prepare();
+                player.setPlayWhenReady(true);
 
                 //playerS.addMediaItem(a_Item1);
                 //playerS.prepare();
                 //playerS.setPlayWhenReady(true);
 
-                playerS.setMediaItem(a_Item1);
+                // Voice acting - plays synthesized mp3 sound in another Exo module
+                //playerS.isPlaying();
+                //playerS.setRepeatMode(playerS.REPEAT_MODE_OFF);
+
+
+                playerS.addMediaItem(a_Item1);
                 // Prepare the player.
                 playerS.prepare();
                 // Start the playback.
-                playerS.play();
+                playerS.setPlayWhenReady(true);
+                //playerS.isPlaying();
 
                 PLstr += "1 ";
             }
         });
 
+        // 2nd and 3rd buttons are the same ...
+
+//        playerS.addListener(new Player.Listener() {
+//            @Override
+//            public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+//            }
+//        });
+
         Video2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 player.addMediaItem(secondItem);
-                Toast.makeText(getBaseContext(),"2 видео добавлено в плейлист",Toast.LENGTH_LONG).show();
-
+                //Toast.makeText(getBaseContext(),"2 видео добавлено в плейлист",Toast.LENGTH_LONG).show();
+                player.prepare();
+                player.setPlayWhenReady(true);
 //                playerS.addMediaItem(a_Item2);
 //                playerS.prepare();
 //                playerS.setPlayWhenReady(true);
 
-                playerS.setMediaItem(a_Item2);
-                // Prepare the player.
+                playerS.addMediaItem(a_Item2);
+                //playerS.setRepeatMode(Player.REPEAT_MODE_OFF);
                 playerS.prepare();
                 // Start the playback.
-                playerS.play();
+                playerS.setPlayWhenReady(true);
+                // Prepare the player.
+                //playerS.prepare();
+                // Start the playback.
+                //playerS.play();
                 PLstr += "2 ";
 
             }
@@ -124,17 +170,18 @@ public class ExoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 player.addMediaItem(thirdItem);
-                Toast.makeText(getBaseContext(),"3 видео добавлено в плейлист",Toast.LENGTH_LONG).show();
-
+                //Toast.makeText(getBaseContext(),"3 видео добавлено в плейлист",Toast.LENGTH_LONG).show();
+                player.prepare();
+                player.setPlayWhenReady(true);
 //                playerS.addMediaItem(a_Item2);
 //                playerS.prepare();
 //                playerS.setPlayWhenReady(true);
 
-                playerS.setMediaItem(a_Item3);
+                playerS.addMediaItem(a_Item3);
                 // Prepare the player.
                 playerS.prepare();
                 // Start the playback.
-                playerS.play();
+                playerS.setPlayWhenReady(true);
                 PLstr += "3 ";
 
             }
@@ -167,6 +214,7 @@ public class ExoActivity extends Activity {
             public void onClick(View v) {
                 Toast.makeText(getBaseContext(),"плейлист сброшен",Toast.LENGTH_LONG).show();
                 player.clearMediaItems();
+                playerS.clearMediaItems();
                 PLstr = "";
 
             }
@@ -177,8 +225,7 @@ public class ExoActivity extends Activity {
         //player.addMediaItem(secondItem);
         //player.addMediaItem(a_Item);
 
-        player.prepare();
-        player.setPlayWhenReady(true);
+
 
         //playerS.prepare();
         //playerS.setPlayWhenReady(true);
@@ -188,6 +235,7 @@ public class ExoActivity extends Activity {
 
     }
 
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -195,4 +243,12 @@ public class ExoActivity extends Activity {
         player.release();
         player = null;
     }
+
+//    private class PlayerEventListener implements Player.EventListener {
+//
+//    }
+
+
+
+
 }
